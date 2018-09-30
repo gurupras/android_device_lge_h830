@@ -6,6 +6,11 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Overlays (inherit after vendor/cm to ensure we override it)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+
+BOARD_HAS_THERMAPLAN := true
+$(call inherit-product, device/thermaplan-btm/device.mk)
+$(call inherit-product, device/lge/h830/thermaplan.mk)
+
 PRODUCT_NAME := lineage_h830
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
